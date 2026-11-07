@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 (2026-11-07)
+
+- A limit warning that was already shown does not show again after an IDE restart.
+- Older Codex files with a reset time in seconds no longer give a second warning for the same window.
+- Clearer privacy text: the plugin keeps no prompt text and never reads login tokens.
+
 ## 0.1.0 (2026-11-07)
 
 First JetBrains release.

@@ -13,7 +13,7 @@
   <li><b>Warnings.</b> A notification once per limit window when it reaches the level you set (90% by default).</li>
 </ul>
 <h3>Offline and private</h3>
-<p>No login, no API key and no network calls. The plugin reads these local files and keeps only token counts, model ids, times and limit numbers. It never reads or keeps prompt text, replies or login tokens.</p>
+<p>No login, no API key and no network calls. The plugin reads these local files and keeps only token counts, model ids, times and limit numbers. It does not keep or show prompt text or replies, and it never reads login tokens.</p>
 <ul>
   <li>Claude Code: <code>~/.claude/projects/**/*.jsonl</code> (or each <code>CLAUDE_CONFIG_DIR</code>), and the <code>cachedUsageUtilization</code> entry in <code>~/.claude.json</code>.</li>
   <li>Codex: <code>~/.codex/sessions/**/rollout-*.jsonl</code> (or <code>CODEX_HOME</code>).</li>
@@ -32,6 +32,7 @@
 <p>All Zovo tools: <a href="https://github.com/theluckystrike">theluckystrike on GitHub</a>.</p>
 ]]></description>
   <change-notes><![CDATA[
+<p>0.1.1: a limit warning that was already shown does not show again after an IDE restart. Clearer privacy text: the plugin keeps no prompt text.</p>
 <p>0.1.0: first JetBrains release. Status bar meter for Claude Code, Codex and Gemini CLI, Claude Code plan limits per account (Team plan weekly limit included), Codex rate limits, a tool window with today, limits, 30 days and models, settings and limit warnings. The numbers match the VS Code version.</p>
 ]]></change-notes>
   <depends>com.intellij.modules.platform</depends>

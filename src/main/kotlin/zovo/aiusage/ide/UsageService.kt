@@ -1,5 +1,6 @@
 package zovo.aiusage.ide
 
+import com.intellij.ide.util.PropertiesComponent
 import com.intellij.notification.NotificationGroupManager
 import com.intellij.notification.NotificationType
 import com.intellij.openapi.Disposable
@@ -45,7 +46,12 @@ class UsageService : Disposable {
     private val limitsReader = ClaudeLimits.Reader(home)
     private val table = Prices.buildTable()
     private val listeners = CopyOnWriteArrayList<() -> Unit>()
-    private val notified = LinkedHashSet<String>()
+    /** Alert ids already shown. Saved in the IDE so a restart does not show the same limit warning again. */
+    private val notified: LinkedHashSet<String> = try {
+        StatusView.parseShown(PropertiesComponent.getInstance().getValue(SHOWN_KEY))
+    } catch (_: Exception) {
+        LinkedHashSet()
+    }
     private var future: ScheduledFuture<*>? = null
     private var interval = 0
 
@@ -120,13 +126,16 @@ class UsageService : Disposable {
         val summary = Aggregate.summarize(store.entries(), Aggregate.Options(now, table, 30, tools, store.limits, claudeLimits))
         val view = StatusView.build(summary, StatusView.Options(tools = tools, showTokens = st.showTokens, warnAt = st.warnAt.coerceIn(1, 100)))
         snapshot = Snapshot(summary, view, list.size, roots, now, null)
+        var shown = false
         if (st.notify) for (a in view.alerts) {
             if (!notified.add(a.id)) continue
             while (notified.size > 200) notified.remove(notified.first())
+            shown = true
             NotificationGroupManager.getInstance().getNotificationGroup(GROUP)
                 .createNotification("AI usage limit", a.text, NotificationType.WARNING)
                 .notify(null)
         }
+        if (shown) try { PropertiesComponent.getInstance().setValue(SHOWN_KEY, StatusView.formatShown(notified)) } catch (_: Exception) { }
     }
 
     private fun fire() {
@@ -141,6 +150,7 @@ class UsageService : Disposable {
     companion object {
         const val HISTORY_DAYS = 31
         const val GROUP = "AI Usage Meter"
+        private const val SHOWN_KEY = "zovo.aiusage.shownAlerts"
         private val LOG = Logger.getInstance(UsageService::class.java)
 
         fun get(): UsageService = ApplicationManager.getApplication().getService(UsageService::class.java)

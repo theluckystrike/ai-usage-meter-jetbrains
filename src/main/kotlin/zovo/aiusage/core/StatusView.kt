@@ -39,6 +39,18 @@ object StatusView {
 
     fun esc(s: String) = s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
+    /**
+     * Reset time in whole minutes for an alert id. Older Codex files give the reset as seconds from the event, so
+     * the same window can come out a few hundred milliseconds apart between events; the minute keeps one id.
+     */
+    fun alertMinute(resetsAt: Long?): Long = if (resetsAt == null) 0 else Math.floorDiv(resetsAt + 30_000, 60_000)
+
+    /** Alert ids already shown, saved as one id per line so a restart does not show them again. Keeps the newest [max]. */
+    fun parseShown(text: String?, max: Int = 200): LinkedHashSet<String> =
+        LinkedHashSet((text ?: "").split('\n').map { it.trim() }.filter { it.isNotEmpty() }.takeLast(max))
+
+    fun formatShown(ids: Collection<String>, max: Int = 200): String = ids.toList().takeLast(max).joinToString("\n")
+
     private fun ago(ms: Long): String = if (ms < 60000) "just now" else Format.duration(ms) + " ago"
 
     fun build(s: Aggregate.Summary, o: Options = Options()): View {
@@ -81,7 +93,7 @@ object StatusView {
                     if (pct == null) { md.add("- $head${v.label}: window has reset since Claude Code saved it"); continue }
                     if (i == 0 && (v.key == "five_hour" || v.key == "seven_day")) { claudeShort.add("${v.name} $pct%"); if (v.key == "five_hour") has5h = true }
                     if (pct >= 90) warn = true
-                    if (pct >= o.warnAt) alerts.add(Alert("claude|${acct.account}|${v.key}|${v.resetsAt ?: 0}", "Claude Code ${if (cl.size > 1) acct.account + " " else ""}${v.label} limit: $pct% used" + (v.resetsIn?.let { ", resets in ${F.duration(it)}" } ?: "")))
+                    if (pct >= o.warnAt) alerts.add(Alert("claude|${acct.account}|${v.key}|${alertMinute(v.resetsAt)}", "Claude Code ${if (cl.size > 1) acct.account + " " else ""}${v.label} limit: $pct% used" + (v.resetsIn?.let { ", resets in ${F.duration(it)}" } ?: "")))
                     md.add("- $head${v.label}: $pct% used" + (if (v.resetsIn != null && v.resetsAt != null) ", resets in ${F.duration(v.resetsIn)} (${F.clock(v.resetsAt, o.zone)})" else ""))
                 }
                 if (acct.fetchedAt != null && acct.fetchedAt != 0L) md.add("- ${head}saved ${ago(now - acct.fetchedAt)}. Claude Code updates it while you use it.")
@@ -111,7 +123,7 @@ object StatusView {
                     if (pct == null) { md.add("- ${v.name}: window has reset since Codex last wrote it"); continue }
                     codexShort.add("${if (v.name == "week") "wk" else v.name} $pct%")
                     if (pct >= 90) warn = true
-                    if (pct >= o.warnAt) alerts.add(Alert("codex|${v.name}|${v.resetsAt ?: 0}", "Codex ${v.name} limit: $pct% used" + (v.resetsIn?.let { ", resets in ${F.duration(it)}" } ?: "")))
+                    if (pct >= o.warnAt) alerts.add(Alert("codex|${v.name}|${alertMinute(v.resetsAt)}", "Codex ${v.name} limit: $pct% used" + (v.resetsIn?.let { ", resets in ${F.duration(it)}" } ?: "")))
                     md.add("- ${v.name}: $pct% used" + (if (v.resetsIn != null && v.resetsAt != null) ", resets in ${F.duration(v.resetsIn)} (${F.clock(v.resetsAt, o.zone)})" else ""))
                 }
                 if (l.plan.isNotEmpty()) md.add("- Plan: ${l.plan}")

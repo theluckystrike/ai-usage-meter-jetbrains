@@ -77,7 +77,7 @@ class UsagePanel(private val project: Project) : com.intellij.openapi.Disposable
         add(title("Models, last 30 days"))
         add(table(modelsModel))
         add(title("Privacy"))
-        add(note("Reads token counts, model ids, times and limit numbers from local files only. Never reads prompt text or login tokens. No network calls. Costs are estimates at API prices."))
+        add(note("Keeps only token counts, model ids, times and limit numbers from local files. Does not keep or show prompt text. Never reads login tokens. No network calls. Costs are estimates at API prices."))
         add(title("Support and more tools"))
         val links = JPanel(FlowLayout(FlowLayout.LEFT, JBUI.scale(12), 0))
         links.add(BrowserLink("Source and issues on GitHub", Support.REPO))

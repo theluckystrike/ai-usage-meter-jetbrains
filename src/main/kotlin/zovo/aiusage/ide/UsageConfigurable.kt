@@ -44,7 +44,7 @@ class UsageConfigurable : Configurable {
             .addLabeledComponent("Extra Claude Code config folders (one per line):", JBScrollPane(extra), true)
             .addLabeledComponent("Codex home folder (empty: CODEX_HOME or ~/.codex):", codexHome)
             .addLabeledComponent("Gemini CLI tmp folder (empty: ~/.gemini/tmp):", geminiDir)
-            .addComponent(JBLabel("<html>Reads token counts, model ids, times and limit numbers only. No prompt text, no login tokens, no network.</html>").apply { foreground = UIUtil.getContextHelpForeground() })
+            .addComponent(JBLabel("<html>Keeps only token counts, model ids, times and limit numbers. No prompt text kept, no login tokens, no network.</html>").apply { foreground = UIUtil.getContextHelpForeground() })
             .addComponentFillVertically(JPanel(), 0)
             .panel
         panel = p

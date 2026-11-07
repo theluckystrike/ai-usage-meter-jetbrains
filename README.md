@@ -18,7 +18,7 @@ Your Claude Code, Codex and Gemini CLI usage in the IDE status bar, read offline
 
 ## Offline and private
 
-No login, no API key, no network calls. The plugin keeps only token counts, model ids, times and limit numbers. It never reads or keeps prompt text, replies or login tokens.
+No login, no API key, no network calls. The plugin keeps only token counts, model ids, times and limit numbers. It does not keep or show prompt text or replies, and it never reads login tokens.
 
 - Claude Code: `~/.claude/projects/**/*.jsonl` (or each `CLAUDE_CONFIG_DIR`) and `cachedUsageUtilization` in `~/.claude.json`.
 - Codex: `~/.codex/sessions/**/rollout-*.jsonl` (or `CODEX_HOME`).
