@@ -44,16 +44,24 @@ export JAVA_HOME=<JDK 17 or newer>   # Gradle fetches the JDK 21 toolchain
 ./gradlew runIde -PdemoHome=<folder with .claude, .claude-work, .codex and .gemini>   # sandbox IDE on demo data
 ```
 
-## Support
+[zovo-support-start]: #
 
-Free and open source (MIT). Issues and ideas: [GitHub issues](https://github.com/theluckystrike/ai-usage-meter-jetbrains/issues). If it helps you, you can [sponsor it on GitHub](https://github.com/sponsors/theluckystrike).
+## Support Zovo
 
-More tools by Zovo:
+Zovo builds and maintains this plugin. If it saves you time, you can support the work on [GitHub Sponsors](https://github.com/sponsors/theluckystrike). Sponsorship is optional, and the tool works the same without it.
 
-- [Context Drift](https://plugins.jetbrains.com/plugin/35875) for JetBrains IDEs: finds commands, paths and versions in AGENTS.md and CLAUDE.md that no longer match your repo.
-- [AI Usage Meter](https://marketplace.visualstudio.com/items?itemName=zovo.ai-usage-meter) for VS Code.
-- [Claude Code History & Codex History Viewer](https://marketplace.visualstudio.com/items?itemName=zovo.agent-session-viewer) for VS Code.
-- [JSONL Viewer & NDJSON Viewer](https://marketplace.visualstudio.com/items?itemName=zovo.zovo-jsonl-viewer) for VS Code.
-- All tools: [theluckystrike on GitHub](https://github.com/theluckystrike).
+Bug reports and ideas go to [GitHub issues](https://github.com/theluckystrike/ai-usage-meter-jetbrains/issues).
+
+Zovo is made by [theluckystrike](https://github.com/theluckystrike) on GitHub.
+
+## More tools by Zovo
+
+- [Claude Code Usage, Codex Usage & Gemini CLI Usage Meter](https://marketplace.visualstudio.com/items?itemName=zovo.ai-usage-meter) for VS Code. Shows Claude Code and Codex tokens and estimated cost from your local session files.
+- [Claude Code History & Codex History Viewer](https://marketplace.visualstudio.com/items?itemName=zovo.agent-session-viewer) for VS Code. Browses and searches your local Claude Code and Codex sessions.
+- [Agent Skills & Claude Skills Manager (Skill Shelf)](https://marketplace.visualstudio.com/items?itemName=zovo.skill-shelf) for VS Code. Lists, checks and toggles the Agent Skills that Claude Code, Codex and Cursor load.
+- [Context Drift for JetBrains IDEs](https://github.com/theluckystrike/context-drift-jetbrains). Finds stale commands, paths and versions in AGENTS.md and CLAUDE.md.
+- [All Zovo tools on GitHub](https://github.com/theluckystrike?tab=repositories). Free tools for VS Code, JetBrains IDEs, Obsidian, Apify and Atlassian.
+
+[zovo-support-end]: #
 
 Not affiliated with Anthropic, OpenAI or Google.
