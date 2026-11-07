@@ -1,0 +1,37 @@
+{
+  "numStartups": 12,
+  "theme": "dark",
+  "oauthAccount": {
+    "emailAddress": "PRIVATE-TEXT-MARKER@example.com",
+    "organizationName": "PRIVATE-TEXT-MARKER",
+    "accountUuid": "acct-PRIVATE-TEXT-MARKER"
+  },
+  "projects": {
+    "/Users/demo/shop-api": {
+      "lastPrompt": "PRIVATE-TEXT-MARKER"
+    }
+  },
+  "cachedUsageUtilization": {
+    "fetchedAtMs": 1793987760000,
+    "accountUuid": "acct-PRIVATE-TEXT-MARKER",
+    "utilization": {
+      "five_hour": {
+        "utilization": 34,
+        "resets_at": "2026-11-06T20:13:00.000Z"
+      },
+      "seven_day": {
+        "utilization": 61,
+        "resets_at": "2026-11-09T23:00:00.000Z"
+      },
+      "seven_day_opus": {
+        "utilization": 22,
+        "resets_at": "2026-11-09T23:00:00.000Z"
+      },
+      "seven_day_sonnet": null,
+      "some_future_window": {
+        "utilization": 99,
+        "resets_at": "2026-11-06T19:00:00.000Z"
+      }
+    }
+  }
+}

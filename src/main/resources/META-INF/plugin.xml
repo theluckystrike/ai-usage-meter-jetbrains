@@ -1,0 +1,49 @@
+<idea-plugin>
+  <id>zovo.ai-usage-meter</id>
+  <name>AI Usage Meter: Claude Code, Codex &amp; Gemini CLI</name>
+  <vendor url="https://github.com/theluckystrike/ai-usage-meter-jetbrains">Zovo</vendor>
+  <description><![CDATA[<p>See your Claude Code, Codex and Gemini CLI usage in the IDE status bar: the Claude Code 5-hour and weekly limits, the Codex rate limits, and today's tokens and estimated cost. It works in IntelliJ IDEA, PyCharm, WebStorm, GoLand, Rider and every other IntelliJ-based IDE.</p>
+<p>The status bar shows a short line such as <code>Claude 5h 34% wk 61% · Codex 5h 12% wk 40%</code>. Hover it for today's tokens and estimated cost per tool. Click it to open the AI Usage tool window.</p>
+<ul>
+  <li><b>Claude Code plan limits.</b> The 5-hour and weekly percent that Claude Code saves on your disk, with the time each one resets. Team plans that keep only a per-model weekly limit work too.</li>
+  <li><b>Several Claude accounts.</b> Each <code>CLAUDE_CONFIG_DIR</code> folder (for example <code>~/.claude-work</code>) counts as its own account, with its own limits.</li>
+  <li><b>Codex rate limits.</b> The 5-hour and weekly windows from your newest Codex session, and the plan name.</li>
+  <li><b>Gemini CLI.</b> Tokens and estimated cost from the Gemini CLI session files.</li>
+  <li><b>Tool window.</b> Today by tool, limits per account, a table of the last 30 days and a table of models.</li>
+  <li><b>Warnings.</b> A notification once per limit window when it reaches the level you set (90% by default).</li>
+</ul>
+<h3>Offline and private</h3>
+<p>No login, no API key and no network calls. The plugin reads these local files and keeps only token counts, model ids, times and limit numbers. It never reads or keeps prompt text, replies or login tokens.</p>
+<ul>
+  <li>Claude Code: <code>~/.claude/projects/**/*.jsonl</code> (or each <code>CLAUDE_CONFIG_DIR</code>), and the <code>cachedUsageUtilization</code> entry in <code>~/.claude.json</code>.</li>
+  <li>Codex: <code>~/.codex/sessions/**/rollout-*.jsonl</code> (or <code>CODEX_HOME</code>).</li>
+  <li>Gemini CLI: <code>~/.gemini/tmp/*/chats/session-*</code>.</li>
+</ul>
+<p>It reads only the new lines of each file since the last pass, on a background thread, once a minute by default. Costs are estimates at public API prices; subscription plans are not billed per token. Settings | Tools | AI Usage Meter picks the tools, the refresh interval, the warning level and extra config folders.</p>
+<p>Not affiliated with Anthropic, OpenAI or Google.</p>
+<p>Free and open source (MIT). Source code and issues: <a href="https://github.com/theluckystrike/ai-usage-meter-jetbrains">github.com/theluckystrike/ai-usage-meter-jetbrains</a>. If it helps you, you can <a href="https://github.com/sponsors/theluckystrike">sponsor it on GitHub</a>.</p>
+<h3>More tools by Zovo</h3>
+<ul>
+<li><a href="https://plugins.jetbrains.com/plugin/35875">Context Drift</a> for JetBrains IDEs. Finds commands, paths and versions in AGENTS.md and CLAUDE.md that no longer match your repo.</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=zovo.ai-usage-meter">AI Usage Meter</a> for VS Code. The same meter in VS Code, with a dashboard.</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=zovo.agent-session-viewer">Claude Code History &amp; Codex History Viewer</a> for VS Code. Browses and searches your local Claude Code and Codex sessions.</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=zovo.zovo-jsonl-viewer">JSONL Viewer &amp; NDJSON Viewer</a> for VS Code. Opens JSONL files as a table, as records or as a chat view.</li>
+</ul>
+<p>All Zovo tools: <a href="https://github.com/theluckystrike">theluckystrike on GitHub</a>.</p>
+]]></description>
+  <change-notes><![CDATA[
+<p>0.1.0: first JetBrains release. Status bar meter for Claude Code, Codex and Gemini CLI, Claude Code plan limits per account (Team plan weekly limit included), Codex rate limits, a tool window with today, limits, 30 days and models, settings and limit warnings. The numbers match the VS Code version.</p>
+]]></change-notes>
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationService serviceImplementation="zovo.aiusage.ide.UsageSettings"/>
+    <applicationService serviceImplementation="zovo.aiusage.ide.UsageService"/>
+    <statusBarWidgetFactory id="zovo.aiusage.widget" implementation="zovo.aiusage.ide.UsageWidgetFactory" order="first"/>
+    <toolWindow id="AI Usage" anchor="bottom" icon="/icons/toolWindow.svg" doNotActivateOnStart="true"
+                factoryClass="zovo.aiusage.ide.UsageToolWindowFactory"/>
+    <applicationConfigurable parentId="tools" id="zovo.aiusage.settings" displayName="AI Usage Meter"
+                             instance="zovo.aiusage.ide.UsageConfigurable"/>
+    <notificationGroup id="AI Usage Meter" displayType="BALLOON"/>
+  </extensions>
+</idea-plugin>

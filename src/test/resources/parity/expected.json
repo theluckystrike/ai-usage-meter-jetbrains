@@ -1,0 +1,491 @@
+{
+ "now": 1793988000000,
+ "files": 67,
+ "entries": 324,
+ "today": {
+  "claude": {
+   "input": 24800,
+   "output": 48800,
+   "cacheWrite": 34000,
+   "cacheRead": 367000,
+   "total": 474600,
+   "cost": 1.19282,
+   "count": 12,
+   "unpriced": 300
+  },
+  "codex": {
+   "input": 20000,
+   "output": 7000,
+   "cacheWrite": 0,
+   "cacheRead": 100000,
+   "total": 127000,
+   "cost": 0.12,
+   "count": 2,
+   "unpriced": 0
+  },
+  "gemini": {
+   "input": 20000,
+   "output": 4000,
+   "cacheWrite": 0,
+   "cacheRead": 40000,
+   "total": 64000,
+   "cost": 0.024,
+   "count": 2,
+   "unpriced": 0
+  }
+ },
+ "range": {
+  "input": 1325562,
+  "output": 811129,
+  "cacheWrite": 2612095,
+  "cacheRead": 15473824,
+  "total": 20222610,
+  "cost": 24.952573659999985,
+  "count": 324,
+  "unpriced": 300
+ },
+ "perDay": [
+  {
+   "day": "2026-10-08",
+   "total": 178453,
+   "cost": 0.009443465,
+   "claude": 178453,
+   "codex": 0,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-09",
+   "total": 573369,
+   "cost": 0.5169457,
+   "claude": 455602,
+   "codex": 117767,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-10",
+   "total": 851285,
+   "cost": 0.57062608,
+   "claude": 851285,
+   "codex": 0,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-11",
+   "total": 838566,
+   "cost": 1.3494394499999998,
+   "claude": 552138,
+   "codex": 286428,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-12",
+   "total": 1486809,
+   "cost": 1.7787787999999998,
+   "claude": 1486809,
+   "codex": 0,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-13",
+   "total": 246569,
+   "cost": 0.23810710000000002,
+   "claude": 0,
+   "codex": 246569,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-14",
+   "total": 789938,
+   "cost": 0.9379184,
+   "claude": 789938,
+   "codex": 0,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-15",
+   "total": 444789,
+   "cost": 0.2940219,
+   "claude": 249906,
+   "codex": 194883,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-16",
+   "total": 634143,
+   "cost": 0.36676233,
+   "claude": 634143,
+   "codex": 0,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-17",
+   "total": 1084782,
+   "cost": 2.3217542250000003,
+   "claude": 914806,
+   "codex": 169976,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-18",
+   "total": 669652,
+   "cost": 0.7803701550000001,
+   "claude": 669652,
+   "codex": 0,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-19",
+   "total": 1364400,
+   "cost": 1.585034985,
+   "claude": 1137603,
+   "codex": 226797,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-20",
+   "total": 0,
+   "cost": 0,
+   "claude": 0,
+   "codex": 0,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-21",
+   "total": 835281,
+   "cost": 1.5741697000000001,
+   "claude": 552659,
+   "codex": 282622,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-22",
+   "total": 637096,
+   "cost": 0.8003567999999999,
+   "claude": 637096,
+   "codex": 0,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-23",
+   "total": 751800,
+   "cost": 1.287733775,
+   "claude": 679050,
+   "codex": 72750,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-24",
+   "total": 486283,
+   "cost": 0.023651199999999997,
+   "claude": 486283,
+   "codex": 0,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-25",
+   "total": 557975,
+   "cost": 0.7657165,
+   "claude": 204865,
+   "codex": 150451,
+   "gemini": 202659
+  },
+  {
+   "day": "2026-10-26",
+   "total": 688151,
+   "cost": 0.48919725999999997,
+   "claude": 688151,
+   "codex": 0,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-27",
+   "total": 233061,
+   "cost": 0.09845305000000001,
+   "claude": 0,
+   "codex": 233061,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-28",
+   "total": 329431,
+   "cost": 0.2002178,
+   "claude": 161937,
+   "codex": 0,
+   "gemini": 167494
+  },
+  {
+   "day": "2026-10-29",
+   "total": 1520362,
+   "cost": 2.5193492250000005,
+   "claude": 1174079,
+   "codex": 346283,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-30",
+   "total": 482113,
+   "cost": 0.20666067000000002,
+   "claude": 472213,
+   "codex": 9900,
+   "gemini": 0
+  },
+  {
+   "day": "2026-10-31",
+   "total": 904944,
+   "cost": 1.2511695,
+   "claude": 528150,
+   "codex": 172334,
+   "gemini": 204460
+  },
+  {
+   "day": "2026-11-01",
+   "total": 422626,
+   "cost": 0.8246630000000001,
+   "claude": 422626,
+   "codex": 0,
+   "gemini": 0
+  },
+  {
+   "day": "2026-11-02",
+   "total": 662519,
+   "cost": 0.10327674999999999,
+   "claude": 539646,
+   "codex": 122873,
+   "gemini": 0
+  },
+  {
+   "day": "2026-11-03",
+   "total": 157909,
+   "cost": 0.21380425,
+   "claude": 0,
+   "codex": 0,
+   "gemini": 157909
+  },
+  {
+   "day": "2026-11-04",
+   "total": 1290355,
+   "cost": 2.4792322000000007,
+   "claude": 1094013,
+   "codex": 185142,
+   "gemini": 11200
+  },
+  {
+   "day": "2026-11-05",
+   "total": 434349,
+   "cost": 0.02889939,
+   "claude": 434349,
+   "codex": 0,
+   "gemini": 0
+  },
+  {
+   "day": "2026-11-06",
+   "total": 665600,
+   "cost": 1.3368200000000001,
+   "claude": 474600,
+   "codex": 127000,
+   "gemini": 64000
+  }
+ ],
+ "perAccount": [
+  {
+   "name": "claude",
+   "total": 16324852,
+   "cost": 21.40048241
+  },
+  {
+   "name": "claude-work",
+   "total": 145200,
+   "cost": 0.1304
+  }
+ ],
+ "perTool": [
+  {
+   "name": "Claude Code",
+   "total": 16470052,
+   "cost": 21.530882409999993
+  },
+  {
+   "name": "Codex",
+   "total": 2944836,
+   "cost": 2.4297622249999993
+  },
+  {
+   "name": "Gemini CLI",
+   "total": 807722,
+   "cost": 0.991929025
+  }
+ ],
+ "perModel": [
+  {
+   "name": "claude-opus-5",
+   "tool": "claude",
+   "total": 3892839,
+   "cost": 9.319453249999999
+  },
+  {
+   "name": "claude-opus-5-5",
+   "tool": "claude",
+   "total": 4083488,
+   "cost": 7.464133799999998
+  },
+  {
+   "name": "claude-sonnet-5-5",
+   "tool": "claude",
+   "total": 4579553,
+   "cost": 4.5499639000000025
+  },
+  {
+   "name": "gpt-5.3-codex",
+   "tool": "codex",
+   "total": 1060579,
+   "cost": 1.1154568249999999
+  },
+  {
+   "name": "gpt-6.1-sol",
+   "tool": "codex",
+   "total": 923151,
+   "cost": 0.8075156000000001
+  },
+  {
+   "name": "gemini-3-pro-preview",
+   "tool": "gemini",
+   "total": 407119,
+   "cost": 0.5568534
+  },
+  {
+   "name": "gpt-6.1-terra",
+   "tool": "codex",
+   "total": 951206,
+   "cost": 0.4865398
+  },
+  {
+   "name": "gemini-2.5-pro",
+   "tool": "gemini",
+   "total": 325403,
+   "cost": 0.40583562500000003
+  },
+  {
+   "name": "claude-haiku-5-5",
+   "tool": "claude",
+   "total": 3913872,
+   "cost": 0.19733146
+  },
+  {
+   "name": "gemini-3-flash-preview",
+   "tool": "gemini",
+   "total": 64000,
+   "cost": 0.024
+  },
+  {
+   "name": "gpt-5.1-codex",
+   "tool": "codex",
+   "total": 9900,
+   "cost": 0.02025
+  },
+  {
+   "name": "gemini-2.5-flash",
+   "tool": "gemini",
+   "total": 11200,
+   "cost": 0.00524
+  },
+  {
+   "name": "claude-experimental-x",
+   "tool": "claude",
+   "total": 300,
+   "cost": 0
+  }
+ ],
+ "perProject": [
+  {
+   "name": "/Users/demo/blog-engine",
+   "total": 8223674
+  },
+  {
+   "name": "/Users/demo/shop-api",
+   "total": 7771555
+  },
+  {
+   "name": "/Users/demo/data-pipeline",
+   "total": 4070981
+  },
+  {
+   "name": "/Users/demo/client-portal",
+   "total": 145200
+  },
+  {
+   "name": "f3a9c1d2e4b5",
+   "total": 11200
+  }
+ ],
+ "block": {
+  "start": 1793973600000,
+  "end": 1793991600000,
+  "total": 218700,
+  "cost": 0.7620199999999999,
+  "perMinute": 911
+ },
+ "codexLimits": {
+  "ts": 1793977560000,
+  "plan": "pro",
+  "primary": {
+   "usedPercent": 42.5,
+   "resetsAt": 1793993700000,
+   "windowMinutes": 300
+  },
+  "secondary": {
+   "usedPercent": 71,
+   "resetsAt": 1794171600000,
+   "windowMinutes": 10080
+  }
+ },
+ "claudeLimits": [
+  {
+   "account": "claude",
+   "fetchedAt": 1793987760000,
+   "windows": [
+    {
+     "key": "five_hour",
+     "name": "5h",
+     "usedPercent": 34,
+     "resetsAt": 1793995980000
+    },
+    {
+     "key": "seven_day",
+     "name": "wk",
+     "usedPercent": 61,
+     "resetsAt": 1794265200000
+    },
+    {
+     "key": "seven_day_opus",
+     "name": "wk Opus",
+     "usedPercent": 22,
+     "resetsAt": 1794265200000
+    }
+   ]
+  },
+  {
+   "account": "claude-work",
+   "fetchedAt": 1793977200000,
+   "windows": [
+    {
+     "key": "five_hour",
+     "name": "5h",
+     "usedPercent": 12,
+     "resetsAt": 1793986200000
+    },
+    {
+     "key": "seven_day",
+     "name": "wk",
+     "usedPercent": 18,
+     "resetsAt": 1794420000000
+    }
+   ]
+  }
+ ],
+ "unpricedModels": [
+  "claude-experimental-x"
+ ],
+ "statusText": "$(pulse) Claude 475k $1.19 5h 34% wk 61% · Codex 127k $0.12 5h 43% wk 71% · Gemini 64k $0.02",
+ "statusTextNoCost": "$(pulse) Claude 475k 5h 34% wk 61% · Codex 127k 5h 43% wk 71% · Gemini 64k",
+ "badLines": 1
+}
